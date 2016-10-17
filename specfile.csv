@@ -1,0 +1,5 @@
+elementname, standard, min, max
+Rows,128,64,320
+RepetitionTime,100.0,95.0,110.0
+EchoTime,2.0,1.7,2.5
+SliceThickness,10.0,10.0,11.0
