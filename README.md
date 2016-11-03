@@ -1,12 +1,34 @@
 # protocheck
 Imaging Collective protocol checker
 
-This program reads a CSV file containing a list of DICOM elements, with expected values and ranges, and compares those values to the values in the header of a DICOM image.  The CSV file should be created as a copy of "template.CSV" and then edited as desired.  Lines can be removed for elements that you are not interested in checking. Lines can be added by looking in _dicom_dict.py to determine the proper spelling of elements.  This dictionary was copied from pydicom, which is used to read the DICOM file.
+This program reads a CSV file containing a list of DICOM elements, with expected values and ranges, 
+and compares those values to the values in the header of a DICOM image.  The CSV file should be 
+created as a copy of "template.CSV" and then edited as desired.  Lines can be removed for elements 
+that you are not interested in checking. Lines can be added by looking in _dicom_dict.py to 
+determine the proper spelling of elements (at the end of the row).  These dictionaries were copied 
+from pydicom, which is used to read the DICOM file.
+
+The file siemens_private_dict.py contains additional private elements, but is not complete.
 
 Usage:
 
   > python protocheck specfile.csv 000001.DCM
-  
+
+
+Contents of specfile.csv:
+
+        Element_name,               Expected_value,    min,     max
+        Rows,                                  128,     64,     320
+        RepetitionTime,                      100.0,   95.0,   110.0
+        EchoTime,                              8.0,    6.0,    10.0
+        SliceThickness,                        5.0,    3.0,     8.0
+        FlipAngle,                              15,     10,      20
+        NumberOfAverages,                        2,      2,       2
+        PixelBandwidth,                        120,    100,     150
+        InPlanePhaseEncodingDirection,         COL,    COL,     COL
+        PixelSpacingX,                       0.729,    0.6,     1.0
+        PixelSpacingY,                       0.729,    0.6,     1.0
+
 Output:
 
                              Element    Value Expected      Max      Min       Status
