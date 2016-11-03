@@ -12,7 +12,7 @@ The file siemens_private_dict.py contains additional private elements, but is no
 
 Usage:
 
-  > python protocheck specfile.csv 000001.DCM
+  $ python protocheck.py 000001.DCM specfile.csv     (or make it executable and call it directly)
 
 
 Contents of specfile.csv:

@@ -1,19 +1,12 @@
-#!/Users/crhamilt/anaconda/python
+#!/usr/bin/env python
 """
 This script checks a DICOM file for compliance with a CSV specification file
 
 @author: cahamilton
 """
 
-#
-# Version  Date      Notes
-#  1.0     20161012  Initial coding
-#
-
 import sys
-import os
 import argparse
-import numpy as np
 import dicom as dcm
 import csv
 
