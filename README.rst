@@ -1,7 +1,7 @@
 tic_protocol_check
 ==================
 
-Imaging Collective protocol checker
+protocol checker for DICOM images
 
 This program reads a CSV file containing a list of DICOM elements, with expected values and ranges, 
 and compares those values to the values in the header of a DICOM image.  The CSV file should be 
@@ -15,7 +15,7 @@ The file siemens_private_dict.py contains additional private elements, but is no
 Usage
 -----
 
-   $ python protocheck.py 000001.DCM specfile.csv     (or make it executable and call it directly)
+   $ python protocol_check_dicom.py 000001.DCM specfile.csv     (or make it executable and call it directly)
 
 
 Contents of specfile.csv::
