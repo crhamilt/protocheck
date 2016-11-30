@@ -12,7 +12,7 @@ from pydicom, which is used to read the DICOM file.
 
 The file siemens_private_dict.py contains additional private elements, but is not complete.
 
-Usage::
+Usage
 -----
 
    $ python protocheck.py 000001.DCM specfile.csv     (or make it executable and call it directly)
@@ -35,7 +35,9 @@ Contents of specfile.csv::
 
 Output::
 
+
                              Element    Value Expected      Max      Min       Status
+
          --------------------------- -------- -------- -------- -------- ------------
                                 Rows   288.00   128.00    64.00   320.00           OK
                            FlipAngle    15.00    15.00    10.00    20.00           OK
@@ -47,3 +49,4 @@ Output::
                             EchoTime     8.32     8.00     6.00    10.00           OK
                        PixelSpacingX     0.73     0.73     0.60     1.00           OK
        InPlanePhaseEncodingDirection      COL      COL      COL      COL           OK
+
