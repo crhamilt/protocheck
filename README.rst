@@ -1,4 +1,6 @@
-# protocheck
+tic_protocol_check
+==================
+
 Imaging Collective protocol checker
 
 This program reads a CSV file containing a list of DICOM elements, with expected values and ranges, 
@@ -10,14 +12,14 @@ from pydicom, which is used to read the DICOM file.
 
 The file siemens_private_dict.py contains additional private elements, but is not complete.
 
-Usage:
+Usage::
+-----
 
-  $ python protocheck.py 000001.DCM specfile.csv     (or make it executable and call it directly)
+   $ python protocheck.py 000001.DCM specfile.csv     (or make it executable and call it directly)
 
 
-Contents of specfile.csv:
+Contents of specfile.csv::
 
-```
         Element_name,               Expected_value,    min,     max
         Rows,                                  128,     64,     320
         RepetitionTime,                      100.0,   95.0,   110.0
@@ -29,11 +31,10 @@ Contents of specfile.csv:
         InPlanePhaseEncodingDirection,         COL,    COL,     COL
         PixelSpacingX,                       0.729,    0.6,     1.0
         PixelSpacingY,                       0.729,    0.6,     1.0
-```
 
-Output:
 
-```
+Output::
+
                              Element    Value Expected      Max      Min       Status
          --------------------------- -------- -------- -------- -------- ------------
                                 Rows   288.00   128.00    64.00   320.00           OK
@@ -46,4 +47,3 @@ Output:
                             EchoTime     8.32     8.00     6.00    10.00           OK
                        PixelSpacingX     0.73     0.73     0.60     1.00           OK
        InPlanePhaseEncodingDirection      COL      COL      COL      COL           OK
-```
