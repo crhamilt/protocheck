@@ -16,6 +16,7 @@ Usage:
 
 
 Contents of specfile.csv:
+
 ```
         Element_name,               Expected_value,    min,     max
         Rows,                                  128,     64,     320
@@ -29,7 +30,9 @@ Contents of specfile.csv:
         PixelSpacingX,                       0.729,    0.6,     1.0
         PixelSpacingY,                       0.729,    0.6,     1.0
 ```
+
 Output:
+
 ```
                              Element    Value Expected      Max      Min       Status
          --------------------------- -------- -------- -------- -------- ------------
