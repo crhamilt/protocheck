@@ -16,7 +16,7 @@ Usage:
 
 
 Contents of specfile.csv:
-
+```
         Element_name,               Expected_value,    min,     max
         Rows,                                  128,     64,     320
         RepetitionTime,                      100.0,   95.0,   110.0
@@ -28,9 +28,9 @@ Contents of specfile.csv:
         InPlanePhaseEncodingDirection,         COL,    COL,     COL
         PixelSpacingX,                       0.729,    0.6,     1.0
         PixelSpacingY,                       0.729,    0.6,     1.0
-
+```
 Output:
-
+```
                              Element    Value Expected      Max      Min       Status
          --------------------------- -------- -------- -------- -------- ------------
                                 Rows   288.00   128.00    64.00   320.00           OK
@@ -43,3 +43,4 @@ Output:
                             EchoTime     8.32     8.00     6.00    10.00           OK
                        PixelSpacingX     0.73     0.73     0.60     1.00           OK
        InPlanePhaseEncodingDirection      COL      COL      COL      COL           OK
+```
