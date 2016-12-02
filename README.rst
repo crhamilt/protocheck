@@ -1,16 +1,18 @@
 tic_protocol_check
 ==================
 
-protocol checker for DICOM images
+protocol_check_dicom.py: protocol checker for DICOM images
 
 This program reads a CSV file containing a list of DICOM elements, with expected values and ranges, 
 and compares those values to the values in the header of a DICOM image.  The CSV file should be 
-created as a copy of "template.CSV" and then edited as desired.  Lines can be removed for elements 
+created as a copy of "template.csv" and then edited as desired.  Lines can be removed for elements
 that you are not interested in checking. Lines can be added by looking in _dicom_dict.py to 
 determine the proper spelling of elements (at the end of the row).  These dictionaries were copied 
 from pydicom, which is used to read the DICOM file.
 
-The file siemens_private_dict.py contains additional private elements, but is not complete.
+The file siemens_private_dict.py contains additional Siemens private elements, but is not complete.
+
+(A checker for Nifti files may get developed as protocol_check_nifti.py)
 
 Usage
 -----
@@ -18,7 +20,7 @@ Usage
    $ python protocol_check_dicom.py 000001.DCM specfile.csv     (or make it executable and call it directly)
 
 
-Contents of specfile.csv::
+Example contents of specfile.csv::
 
         Element_name,               Expected_value,    min,     max
         Rows,                                  128,     64,     320
@@ -34,7 +36,6 @@ Contents of specfile.csv::
 
 
 Output::
-
 
                              Element    Value Expected      Max      Min       Status
 
