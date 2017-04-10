@@ -42,7 +42,7 @@ def protocol_check_dicom(dimg, spec_file):
         # value is a tuple (standard,min,max), only check floats, not strings (such as PE direction)
         if not isinstance(value[0], str) and (value[1] > value[0]) or (value[2] < value[0]):
             print(('bad spec file range:', value))
-            sys.exit()
+            sys.exit(-1)
 
     print('\nspec file looks OK.\n')
 
@@ -89,13 +89,13 @@ def protocol_check_dicom(dimg, spec_file):
                 status = "OK"
             else:
                 status = "OutOfRange"
-                return_status = -1
+                return_status += 1
         else:
             if val == value[0]:
                 status = "OK"
             else:
                 status = "OutOfRange"
-                return_status = -1
+                return_status += 1
 
         if isfloat:
             print('%30s %8.2f %8.2f %8.2f %8.2f %12s'
@@ -105,9 +105,9 @@ def protocol_check_dicom(dimg, spec_file):
                   % (key, val, value[0], value[1], value[2], status))
 
     if return_status == 0:
-        print('PASS')
+        print('Summary: PASS')
     else:
-        print('FAIL')
+        print('Summary: FAIL %d items' % (return_status))
 
     return return_status
 
@@ -121,4 +121,7 @@ if __name__ == "__main__":
                         help="Specification file (CSV).")
     args = parser.parse_args()
 
-    sys.exit(protocol_check_dicom(args.image, args.specfile))
+    stat = protocol_check_dicom(args.image, args.specfile)
+
+    sys.exit(stat)
+

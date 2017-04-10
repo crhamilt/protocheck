@@ -13,8 +13,9 @@ sys.path.insert(0, os.path.abspath('../protocol_check'))
 
 import protocol_check_dicom
 
-protocol_check_dicom.protocol_check_dicom('000001.DCM','specfile.csv')
+stat = protocol_check_dicom.protocol_check_dicom('000001.DCM','specfile.csv')
 
+print('return value= ',stat)
 
 
 

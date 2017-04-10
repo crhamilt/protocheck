@@ -51,3 +51,10 @@ Output::
                        PixelSpacingX     0.73     0.73     0.60     1.00           OK
        InPlanePhaseEncodingDirection      COL      COL      COL      COL           OK
 
+       Summary: FAIL 2 items
+
+
+Return value::
+
+    The number of failed items is returned.
+

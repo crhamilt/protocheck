@@ -3,7 +3,7 @@ Rows,                                  128,     64,     320
 RepetitionTime,                      100.0,   95.0,   110.0
 EchoTime,                              8.0,    6.0,    10.0
 SliceThickness,                        5.0,    3.0,     8.0
-FlipAngle,                              15,     10,      20
+FlipAngle,                              25,     20,      30
 NumberOfAverages,                        2,      2,       2
 PixelBandwidth,                        120,    100,     150
 InPlanePhaseEncodingDirection,         COL,    COL,     COL
